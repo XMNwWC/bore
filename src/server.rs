@@ -63,8 +63,10 @@ impl Server {
     }
 
     async fn create_listener(&self, port: u16) -> Result<TcpListener, &'static str> {
+        let ip = local_ip::get().unwrap();
+        info!("local ip address: {:?}", ip.to_string());
         let try_bind = |port: u16| async move {
-            TcpListener::bind((local_ip::get().unwrap(), port))
+            TcpListener::bind((ip, port))
                 .await
                 .map_err(|err| match err.kind() {
                     io::ErrorKind::AddrInUse => "port already in use",
