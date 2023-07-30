@@ -35,6 +35,7 @@ enum Command {
 
     /// Runs the remote proxy server.
     Server {
+
         /// Minimum accepted TCP port number.
         #[clap(long, default_value_t = 1024)]
         min_port: u16,

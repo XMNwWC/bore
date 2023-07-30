@@ -1,3 +1,5 @@
+> INFO: This is a unoffical repo,and it only support for IPv6 network.
+
 # bore
 
 [![Build status](https://img.shields.io/github/actions/workflow/status/ekzhang/bore/ci.yml)](https://github.com/ekzhang/bore/actions)
