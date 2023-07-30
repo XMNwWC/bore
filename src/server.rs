@@ -13,6 +13,8 @@ use uuid::Uuid;
 use crate::auth::Authenticator;
 use crate::shared::{proxy, ClientMessage, Delimited, ServerMessage, CONTROL_PORT};
 
+extern crate local_ip;
+
 /// State structure for the server.
 pub struct Server {
     /// Range of TCP ports that can be forwarded.
@@ -62,7 +64,7 @@ impl Server {
 
     async fn create_listener(&self, port: u16) -> Result<TcpListener, &'static str> {
         let try_bind = |port: u16| async move {
-            TcpListener::bind(("0.0.0.0", port))
+            TcpListener::bind((local_ip::get().unwrap(), port))
                 .await
                 .map_err(|err| match err.kind() {
                     io::ErrorKind::AddrInUse => "port already in use",
