@@ -62,8 +62,9 @@ impl Server {
 
     async fn create_listener(&self, port: u16) -> Result<TcpListener, &'static str> {
         let try_bind = |port: u16| async move {
-            TcpListener::bind(("::", port))
-                .await
+            let addr = SocketAddrV6::new(Ipv6Addr::UNSPECIFIED, port, 0, 0);
+            info!(?addr, "bind address");
+            TcpListener::bind(&addr).await
                 .map_err(|err| match err.kind() {
                     io::ErrorKind::AddrInUse => "port already in use",
                     io::ErrorKind::PermissionDenied => "permission denied",
