@@ -62,7 +62,7 @@ impl Server {
 
     async fn create_listener(&self, port: u16) -> Result<TcpListener, &'static str> {
         let try_bind = |port: u16| async move {
-            TcpListener::bind(("::1", port))
+            TcpListener::bind(("::", port))
                 .await
                 .map_err(|err| match err.kind() {
                     io::ErrorKind::AddrInUse => "port already in use",
