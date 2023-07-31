@@ -1,4 +1,4 @@
-> INFO: This is a unoffical repo,and it only support for IPv6 network.
+> INFO: This is a unoffical repo, and it only support for IPv6 network.
 
 # bore
 
