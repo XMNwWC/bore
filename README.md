@@ -2,8 +2,7 @@
 
 # bore
 
-[![Build status](https://img.shields.io/github/actions/workflow/status/ekzhang/bore/ci.yml)](https://github.com/ekzhang/bore/actions)
-[![Crates.io](https://img.shields.io/crates/v/bore-cli.svg)](https://crates.io/crates/bore-cli)
+[![Crates.io](https://img.shields.io/crates/v/borev6-cli.svg)](https://crates.io/crates/borev6-cli)
 
 A modern, simple TCP tunnel in Rust that exposes local ports to a remote server, bypassing standard NAT connection firewalls. **That's all it does: no more, and no less.**
 
@@ -11,7 +10,7 @@ A modern, simple TCP tunnel in Rust that exposes local ports to a remote server,
 
 ```shell
 # Installation (requires Rust, see alternatives below)
-cargo install bore-cli
+cargo install borev6-cli
 
 # On your local machine
 bore local 8000 --to bore.pub
@@ -28,7 +27,7 @@ Similar to [localtunnel](https://github.com/localtunnel/localtunnel) and [ngrok]
 If you're on macOS, `bore` is packaged as a Homebrew core formula.
 
 ```shell
-brew install bore-cli
+brew install borev6-cli
 ```
 
 Otherwise, the easiest way to install bore is from prebuilt binaries. These are available on the [releases page](https://github.com/ekzhang/bore/releases) for macOS, Windows, and Linux. Just unzip the appropriate file for your platform and move the `bore` executable into a folder on your PATH.
@@ -36,14 +35,12 @@ Otherwise, the easiest way to install bore is from prebuilt binaries. These are 
 You also can build `bore` from source using [Cargo](https://doc.rust-lang.org/cargo/), the Rust package manager. This command installs the `bore` binary at a user-accessible path.
 
 ```shell
-cargo install bore-cli
+cargo install borev6-cli
 ```
 
-We also publish versioned Docker images for each release. The image is built for an AMD 64-bit architecture. They're tagged with the specific version and allow you to run the statically-linked `bore` binary from a minimal "scratch" container.
+## Docker
 
-```shell
-docker run -it --init --rm --network host ekzhang/bore <ARGS>
-```
+I won't publish to Docker Hub,so please create docker image by yourself.
 
 ## Detailed Usage
 
