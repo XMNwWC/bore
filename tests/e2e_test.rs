@@ -4,7 +4,7 @@ use std::net::SocketAddr;
 use std::time::Duration;
 
 use anyhow::{anyhow, Result};
-use bore_cli::{client::Client, server::Server, shared::CONTROL_PORT};
+use borev6_cli::{client::Client, server::Server, shared::CONTROL_PORT};
 use lazy_static::lazy_static;
 use rstest::*;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};

@@ -1,5 +1,5 @@
 use anyhow::Result;
-use bore_cli::{client::Client, server::Server};
+use borev6_cli::{client::Client, server::Server};
 use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand};
 
 #[derive(Parser, Debug)]

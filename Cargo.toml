@@ -1,10 +1,10 @@
 [package]
-name = "bore-cli"
+name = "borev6-cli"
 version = "0.5.0"
-authors = ["Eric Zhang <ekzhang1@gmail.com>"]
+authors = ["XiaMoHuaHuo_CN's Network & Work", "Eric Zhang <ekzhang1@gmail.com>"]
 license = "MIT"
 description = "A modern, simple TCP tunnel in Rust that exposes local ports to a remote server, bypassing standard NAT connection firewalls."
-repository = "https://github.com/ekzhang/bore"
+repository = "https://github.com/XMNWwC/boreV6"
 documentation = "https://docs.rs/bore-cli"
 keywords = ["network", "cli", "tunnel", "tcp"]
 categories = ["network-programming", "web-programming", "command-line-utilities"]
@@ -31,7 +31,6 @@ tokio-util = { version = "0.7.1", features = ["codec"] }
 tracing = "0.1.32"
 tracing-subscriber = "0.3.10"
 uuid = { version = "1.2.1", features = ["serde", "v4"] }
-local-ip = "0.1"
 
 [dev-dependencies]
 lazy_static = "1.4.0"

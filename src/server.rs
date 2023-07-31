@@ -13,8 +13,6 @@ use uuid::Uuid;
 use crate::auth::Authenticator;
 use crate::shared::{proxy, ClientMessage, Delimited, ServerMessage, CONTROL_PORT};
 
-extern crate local_ip;
-
 /// State structure for the server.
 pub struct Server {
     /// Range of TCP ports that can be forwarded.
@@ -41,7 +39,7 @@ impl Server {
     /// Start the server, listening for new connections.
     pub async fn listen(self) -> Result<()> {
         let this = Arc::new(self);
-        let addr = SocketAddrV6::new(Ipv6Addr::new(0,0,0,0,0,0,0,1), CONTROL_PORT, 0, 0);
+        let addr = SocketAddrV6::new(Ipv6Addr::UNSPECIFIED, CONTROL_PORT, 0, 0);
         let listener = TcpListener::bind(&addr).await?;
         info!(?addr, "server listening");
 

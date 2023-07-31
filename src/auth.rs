@@ -28,7 +28,7 @@ impl Authenticator {
     /// Validate a reply to a challenge.
     ///
     /// ```
-    /// use bore_cli::auth::Authenticator;
+    /// use borev6_cli::auth::Authenticator;
     /// use uuid::Uuid;
     ///
     /// let auth = Authenticator::new("secret");
